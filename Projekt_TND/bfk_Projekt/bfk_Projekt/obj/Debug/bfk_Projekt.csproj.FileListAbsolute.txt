@@ -1,0 +1,6 @@
+H:\NiklasH\Unterstufenprojekt\Projekt_TND\bfk_Projekt\bfk_Projekt\bin\Debug\bfk_Projekt.exe.config
+H:\NiklasH\Unterstufenprojekt\Projekt_TND\bfk_Projekt\bfk_Projekt\obj\Debug\bfk_Projekt.csprojResolveAssemblyReference.cache
+H:\NiklasH\Unterstufenprojekt\Projekt_TND\bfk_Projekt\bfk_Projekt\bin\Debug\bfk_Projekt.exe
+H:\NiklasH\Unterstufenprojekt\Projekt_TND\bfk_Projekt\bfk_Projekt\bin\Debug\bfk_Projekt.pdb
+H:\NiklasH\Unterstufenprojekt\Projekt_TND\bfk_Projekt\bfk_Projekt\obj\Debug\bfk_Projekt.exe
+H:\NiklasH\Unterstufenprojekt\Projekt_TND\bfk_Projekt\bfk_Projekt\obj\Debug\bfk_Projekt.pdb
