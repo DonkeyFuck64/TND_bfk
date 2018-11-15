@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,33 +7,40 @@ using System.Threading.Tasks;
 
 namespace bfk_Projekt
 {
-    class Program
+    static class Program
     {
+        public static string currentFilePath =  Directory.GetCurrentDirectory();
+
         static void Main(string[] args)
         {
-            args[0] = "list";
             if(args.Length < 1)
             {
                  return;
             }
             else if (args[0].Equals("list"))
             {
+
                 try
                 {
-                    string arg = args[1];
-                    list.listAll(arg);
+                    list.listAll();
 
                 }
                 catch (IndexOutOfRangeException)
                 {
                     Console.WriteLine("Parameter ist Invalide.");
+                    Console.ReadKey();
                 }
             }
             else if (args[0].Equals("listtype"))
             {
-                if (args[1].Equals(""))
+                if (!args[1].Equals(""))
                 {
-
+                    listtype.listAll(args[1]);
+                }
+                else
+                {
+                    Console.WriteLine("Du Pimmelberger");
+                    Console.ReadKey();
                 }
             }
             else if (args[0].Equals("listname"))
@@ -75,8 +83,8 @@ namespace bfk_Projekt
             }
 
 
-            
 
+            Console.ReadKey();
         }
     }
 }

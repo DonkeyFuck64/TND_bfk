@@ -7,26 +7,24 @@ using System.IO;
 
 namespace bfk_Projekt
 {
-    class list
+    public class list
     {
-        public static void listAll(string arg)
+
+        public static void listAll()
         {
+            System.IO.DirectoryInfo directoryInfo;
 
-
-            var files = from retrievedFile in Directory.EnumerateFiles("dir//", "*.txt", SearchOption.AllDirectories)
-                        from line in File.ReadLines(retrievedFile)
-                        where line.Contains("Example")
-                        select new
-                        {
-                            File = retrievedFile,
-                            Line = line
-                        };
-
-            foreach (var f in files)
-            {
-                Console.WriteLine("{0} contains {1}", f.File, f.Line);
+            directoryInfo = new System.IO.DirectoryInfo(Program.currentFilePath); 
+            System.IO.DirectoryInfo[] dirInfo = directoryInfo.GetDirectories(); 
+            System.IO.FileInfo[] finfo = directoryInfo.GetFiles();
+            for (int i = 0; i < dirInfo.Length; i++)
+            {         
+                Console.WriteLine("<dir> " + dirInfo[i].Name);  
             }
-            Console.WriteLine("{0} lines found.", files.Count().ToString());
+            for (int i = 0; i < finfo.Length; i++)               
+            {
+                Console.WriteLine("--- " + finfo[i].Name);          
+            }
         }
     }
 }
