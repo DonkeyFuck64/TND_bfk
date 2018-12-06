@@ -11,7 +11,7 @@ namespace bfk_Projekt
     {
         public static string currentFilePath =  Directory.GetCurrentDirectory();
 
-        static void Main(string[] args)
+        static void Main(string[]  args)
         {
             if(args.Length < 1)
             {
@@ -22,7 +22,7 @@ namespace bfk_Projekt
 
                 try
                 {
-                    list.listAll();
+                    list.listAll(true);
 
                 }
                 catch (IndexOutOfRangeException)
@@ -33,37 +33,66 @@ namespace bfk_Projekt
             }
             else if (args[0].Equals("listtype"))
             {
-                if (!args[1].Equals(""))
+                if (args.Length == 2)
                 {
                     listtype.listAll(args[1]);
+                    
+                }
+                else if (args.Length == 1)
+                {
+                    list.listAll(false);
                 }
                 else
                 {
-                    Console.WriteLine("Du Pimmelberger");
+                    Console.WriteLine("Parameter ist Invalide.");
                     Console.ReadKey();
                 }
+
+                
             }
             else if (args[0].Equals("listname"))
             {
-                if (args[1].Equals(""))
+                if (args.Length == 2)
                 {
+                    listname.listAll(args[1]);
 
+                }
+                else if (args.Length == 1)
+                {
+                    list.listAll(false);
+                }
+                else
+                {
+                    Console.WriteLine("Parameter ist Invalide.");
+                    Console.ReadKey();
                 }
             }
             else if (args[0].Equals( "backup"))
             {
                 if (args[1].Equals(""))
                 {
-
+                    Console.WriteLine("Parameter ist Invalide.");
+                }
+                else
+                {
+                    Backup.CreateBackup(args[1]);
                 }
             }
             else if (args[0].Equals("xml"))
             {
                 
             }
-            else if (args[0].Equals("join"))
+            else if (args[0].Equals("Join"))
             {
                 string[] files = args;
+                if (args[1].Equals("") || args[2].Equals("") || args[3].Equals(""))
+                {
+                    Console.WriteLine("Parameter ist Invalide.");
+                }
+                else
+                {
+                    Join.Joint(args[1], args[2], args[3]);
+                }
             }
             else if (args[0].Equals("attrib"))
             {
@@ -85,6 +114,9 @@ namespace bfk_Projekt
 
 
             Console.ReadKey();
+        
+        
+        
         }
     }
 }

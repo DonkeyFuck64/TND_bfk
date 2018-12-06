@@ -6,23 +6,31 @@ using System.Threading.Tasks;
 
 namespace bfk_Projekt
 {
-    static class listtype
+    class listname
     {
         static public System.IO.DirectoryInfo directoryInfo;
 
         static public void listAll(string arg)
         {
-            directoryInfo = new System.IO.DirectoryInfo(Program.currentFilePath); 
-            System.IO.FileInfo[] finfo = directoryInfo.GetFiles(); 
+            directoryInfo = new System.IO.DirectoryInfo(Program.currentFilePath);
+            System.IO.FileInfo[] finfo = directoryInfo.GetFiles();
+            arg = arg.ToLowerInvariant();
 
-    
-                for (int i = 0; i < finfo.Length; i++)                
+
+                for (int i = 0; i < finfo.Length; i++)
                 {
                     try
                     {
-                        if (System.IO.Path.GetExtension(finfo[i].Name).Equals("." + arg))
+
+                        string filename = finfo[i].Name.ToLowerInvariant();
+
+                        
+
+                        if (System.IO.Path.GetFileNameWithoutExtension(filename).StartsWith(arg))
                         {
-                            Console.WriteLine(" - " + finfo[i].Name);          
+
+                            Console.WriteLine(" - " + finfo[i].Name);
+                  
                         }
 
                     }

@@ -56,9 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backup.cs" />
+    <Compile Include="Join.cs" />
     <Compile Include="list.cs" />
+    <Compile Include="listname.cs" />
     <Compile Include="listtype.cs" />
-    <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
